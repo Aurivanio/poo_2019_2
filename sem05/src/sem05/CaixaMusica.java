@@ -2,29 +2,58 @@ package sem05;
 
 public class CaixaMusica {
 	private String cor;
-	Bateria bateria;
+	int bateria;
 	private boolean ligado;
-	private boolean tocando;
+	
 	
 	public void tocarMusica(String nomeMusica) {
-		if (ligado = true) {
-			System.out.println("Tocando a musica: " + nomeMusica);
-			this.tocando = true;
-			bateria.setCarga(-10);
+		if (this.ligado == true) {
+			
+			if(this.bateria >= 1) {
+			System.out.println("Tocando a musica");
+			this.bateria = this.bateria - 10;
+			}else {
+				
+				System.out.println("Bateria descarregada");
+			}
 		}
 		else {
-			System.out.println ("Bateria Descarregada");
+			System.out.println ("Aparelho desligado, por favor ligue-o");
 				
+			}
 		}
-	public CaixaMusica(String cor, Bateria bateria) {
-		this.cor = cor;
-		this.bateria = bateria;
+	
+	public void ligarAparelho() {
 		this.ligado = true;
-		this.tocando = false;
-	}
-			
+		System.out.println("Aparelho ligado");
 		
 	}
 	
+	public void status () {
+		System.out.println("Status da Bateria:" + this.bateria);
+		System.out.println("Aparelho esta ligado? "+ this.ligado);
+		
+	}
+	public CaixaMusica(String cor) {
+		this.cor = cor;
+		this.bateria = 100;
+	}
+	public void carregarBateria () {
+		int i = 0;
+		while (true) {
+			
+			System.out.println("Carregando: " + i);
+			i = i + 1;
+			if (i > 100) {
+				
+				break;
+				
+			}
+			
+		}
+		System.out.println("Bateria carregada com sucesso!");
+	}		
+		
+	}	
 
-}
+
